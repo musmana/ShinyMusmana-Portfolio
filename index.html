@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shiny Musmana J - Senior Web Developer with 8+ years of experience in HTML, CSS, JavaScript, WordPress, PHP, and MySQL. Specializing in responsive web design and SEO optimization.">
+    <meta name="keywords" content="web developer, senior developer, WordPress, HTML, CSS, JavaScript, PHP, Trichy, Tamil Nadu">
+    <title>Shiny Musmana J | Senior Web Developer Portfolio</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#8b5cf6',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-in-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'slide-down': 'slideDown 0.6s ease-out',
+                        'zoom-in': 'zoomIn 0.5s ease-out',
+                        'gradient-flow': 'gradientFlow 3s ease infinite',
+                        'float': 'float 3s ease-in-out infinite',
+                        'bounce-slow': 'bounce 2s infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'spin-slow': 'spin 8s linear infinite',
+                        'wiggle': 'wiggle 1s ease-in-out infinite',
+                        'tilt': 'tilt 10s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(30px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        slideDown: {
+                            '0%': { transform: 'translateY(-30px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        zoomIn: {
+                            '0%': { transform: 'scale(0.9)', opacity: '0' },
+                            '100%': { transform: 'scale(1)', opacity: '1' },
+                        },
+                        gradientFlow: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        wiggle: {
+                            '0%, 100%': { transform: 'rotate(-3deg)' },
+                            '50%': { transform: 'rotate(3deg)' },
+                        },
+                        tilt: {
+                            '0%, 50%, 100%': { transform: 'rotate(0deg)' },
+                            '25%': { transform: 'rotate(1deg)' },
+                            '75%': { transform: 'rotate(-1deg)' },
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+    
+    <!-- Load Theme on Page Load -->
+    <script>
+        if (localStorage.getItem('color-theme') === 'light') {
+            document.documentElement.classList.remove('dark');
+        } else {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+    
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientFlow 3s ease infinite;
+        }
+        
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .dark .glass-effect {
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .progress-bar {
+            transition: width 1s ease-out;
+        }
+        
+        /* Parallax Effect */
+        .parallax-layer {
+            transition: transform 0.1s ease-out;
+        }
+        
+        /* Magnetic Button Effect */
+        .magnetic-btn {
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        /* 3D Card Effect */
+        .card-3d {
+            transform-style: preserve-3d;
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        
+        .card-3d:hover {
+            transform: rotateY(5deg) rotateX(5deg) scale(1.05);
+        }
+        
+        /* Ripple Effect */
+        .ripple {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ripple::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .ripple:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        /* Morphing Shape Animation */
+        @keyframes morph {
+            0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+            50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+        }
+        
+        .morphing-shape {
+            animation: morph 8s ease-in-out infinite;
+        }
+        
+        /* Text Reveal Effect */
+        .text-reveal {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .text-reveal::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.5), transparent);
+            transition: left 0.8s;
+        }
+        
+        .text-reveal:hover::before {
+            left: 100%;
+        }
+        
+        /* Image Zoom on Hover */
+        .image-zoom {
+            overflow: hidden;
+        }
+        
+        .image-zoom img {
+            transition: transform 0.6s ease-out;
+        }
+        
+        .image-zoom:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Glow Effect */
+        .glow-on-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .glow-on-hover:hover {
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.6), 0 0 40px rgba(139, 92, 246, 0.4);
+        }
+        
+        /* Stagger Animation */
+        .stagger-item {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 0.6s ease-out forwards;
+        }
+        
+        .stagger-item:nth-child(1) { animation-delay: 0.1s; }
+        .stagger-item:nth-child(2) { animation-delay: 0.2s; }
+        .stagger-item:nth-child(3) { animation-delay: 0.3s; }
+        .stagger-item:nth-child(4) { animation-delay: 0.4s; }
+        .stagger-item:nth-child(5) { animation-delay: 0.5s; }
+        .stagger-item:nth-child(6) { animation-delay: 0.6s; }
+        
+        /* Rotating Border */
+        @keyframes rotate-border {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .rotating-border {
+            position: relative;
+        }
+        
+        .rotating-border::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: inherit;
+            background: linear-gradient(45deg, #6366f1, #8b5cf6, #ec4899, #6366f1);
+            background-size: 300% 300%;
+            animation: rotate-border 3s linear infinite;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .rotating-border:hover::before {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body class="bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-gray-200 dark:border-gray-800">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <a href="#home" class="text-2xl font-bold gradient-text text-reveal">SM</a>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-indigo-500 transition-all duration-300 transform hover:scale-110">Home</a>
+                    <a href="#about" class="hover:text-indigo-500 transition-all duration-300 transform hover:scale-110">About</a>
+                    <a href="#skills" class="hover:text-indigo-500 transition-all duration-300 transform hover:scale-110">Skills</a>
+                    <a href="#experience" class="hover:text-indigo-500 transition-all duration-300 transform hover:scale-110">Experience</a>
+                    <a href="#projects" class="hover:text-indigo-500 transition-all duration-300 transform hover:scale-110">Projects</a>
+                    <a href="#services" class="hover:text-indigo-500 transition-all duration-300 transform hover:scale-110">Services</a>
+                    <a href="#contact" class="hover:text-indigo-500 transition-all duration-300 transform hover:scale-110">Contact</a>
+                </div>
+                
+                <!-- Dark Mode Toggle -->
+                <button id="theme-toggle" type="button" class="p-2.5 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300 transform hover:rotate-180">
+                    <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-20 px-4 relative overflow-hidden">
+        <!-- Floating Animated Background Elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-indigo-500/10 rounded-full blur-3xl animate-float"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-float" style="animation-delay: 1s;"></div>
+            <div class="absolute top-1/2 left-1/2 w-80 h-80 bg-pink-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
+        </div>
+        
+        <div class="container mx-auto relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="animate-slide-up">
+                    <p class="text-indigo-500 dark:text-indigo-400 text-lg mb-2 animate-fade-in">Hello, I'm</p>
+                    <h1 class="text-5xl md:text-7xl font-bold mb-4 gradient-text">Shiny Musmana J</h1>
+                    <h2 class="text-3xl md:text-4xl font-semibold mb-6 text-gray-700 dark:text-gray-300">Senior Web Developer</h2>
+                    <p class="text-lg mb-8 text-gray-600 dark:text-gray-400">8+ years of crafting responsive, high-performance web experiences with modern technologies</p>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="magnetic-btn px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 ripple glow-on-hover">
+                            Get In Touch
+                        </a>
+                        <a href="#projects" class="px-8 py-3 border-2 border-indigo-600 dark:border-indigo-400 text-indigo-600 dark:text-indigo-400 rounded-lg hover:bg-indigo-600 hover:text-white dark:hover:bg-indigo-400 dark:hover:text-gray-900 transition-all duration-300 transform hover:scale-105">
+                            View Projects
+                        </a>
+                    </div>
+                    
+                    <div class="flex gap-4 mt-8">
+                        <a href="mailto:shinymusmana@gmail.com" class="p-3 bg-gray-200 dark:bg-gray-800 rounded-full hover:bg-indigo-600 hover:text-white transition-all duration-300 transform hover:scale-110 hover:rotate-12">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/musmana" target="_blank" class="p-3 bg-gray-200 dark:bg-gray-800 rounded-full hover:bg-indigo-600 hover:text-white transition-all duration-300 transform hover:scale-110 hover:rotate-12">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="https://linkedin.com/in/shinymusmana" target="_blank" class="p-3 bg-gray-200 dark:bg-gray-800 rounded-full hover:bg-indigo-600 hover:text-white transition-all duration-300 transform hover:scale-110 hover:rotate-12">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="animate-zoom-in flex justify-center parallax-layer">
+                    <div class="relative">
+                        <svg class="w-full max-w-md animate-tilt" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <circle cx="250" cy="250" r="200" fill="url(#gradient1)" opacity="0.2" class="animate-pulse-slow"/>
+                            <circle cx="250" cy="250" r="150" fill="url(#gradient1)" opacity="0.3" class="animate-spin-slow"/>
+                            <path d="M250,150 L200,200 L250,250 L300,200 Z" fill="url(#gradient1)"/>
+                            <rect x="200" y="250" width="100" height="120" rx="10" fill="url(#gradient1)"/>
+                            <circle cx="225" cy="180" r="30" fill="url(#gradient1)" class="animate-bounce-slow"/>
+                            <line x1="150" y1="280" x2="180" y2="280" stroke="url(#gradient1)" stroke-width="4"/>
+                            <line x1="320" y1="280" x2="350" y1="280" stroke="url(#gradient1)" stroke-width="4"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section with Professional Photo -->
+    <section id="about" class="py-20 px-4 bg-gray-50 dark:bg-slate-800 relative overflow-hidden">
+        <!-- Parallax Background Elements -->
+        <div class="absolute inset-0 opacity-30">
+            <div class="absolute top-10 right-10 w-64 h-64 bg-indigo-500/20 rounded-full blur-3xl morphing-shape"></div>
+            <div class="absolute bottom-10 left-10 w-80 h-80 bg-purple-500/20 rounded-full blur-3xl morphing-shape" style="animation-delay: 2s;"></div>
+        </div>
+        
+        <div class="container mx-auto relative z-10">
+            <div class="text-center mb-12 reveal">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">About <span class="gradient-text">Me</span></h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Professional Photo -->
+                <div class="reveal flex justify-center">
+                    <div class="relative group">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-2xl blur-lg opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+                        <div class="relative image-zoom rounded-2xl overflow-hidden shadow-2xl">
+                            <img src="shinyprofessional.png" alt="Shiny Musmana J - Senior Web Developer" class="w-full max-w-md rounded-2xl" />
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reveal">
+                    <h3 class="text-3xl font-bold mb-6 text-indigo-600 dark:text-indigo-400 text-reveal">Versatile Senior Web Developer</h3>
+                    <p class="text-lg mb-4 text-gray-700 dark:text-gray-300">
+                        With <strong>8+ years of experience</strong>, I specialize in designing, developing, and deploying responsive websites and web applications using modern technologies like HTML5, CSS3, JavaScript, Bootstrap, Tailwind CSS, PHP, MySQL, and WordPress.
+                    </p>
+                    <p class="text-lg mb-4 text-gray-700 dark:text-gray-300">
+                        I have successfully delivered <strong>1000+ responsive websites</strong>, achieving up to 40% improvement in organic traffic through SEO optimization and 99.9% uptime with high-performance solutions.
+                    </p>
+                    <p class="text-lg mb-6 text-gray-700 dark:text-gray-300">
+                        Based in <strong>Trichy, Tamil Nadu</strong>, I'm passionate about leveraging AI tools and modern frameworks to continuously improve web performance, user experience, and digital presence.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="stagger-item p-4 bg-white dark:bg-slate-900 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 glow-on-hover">
+                            <p class="text-3xl font-bold text-indigo-600 dark:text-indigo-400">1000+</p>
+                            <p class="text-gray-600 dark:text-gray-400">Projects Completed</p>
+                        </div>
+                        <div class="stagger-item p-4 bg-white dark:bg-slate-900 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 glow-on-hover">
+                            <p class="text-3xl font-bold text-purple-600 dark:text-purple-400">8+</p>
+                            <p class="text-gray-600 dark:text-gray-400">Years Experience</p>
+                        </div>
+                        <div class="stagger-item p-4 bg-white dark:bg-slate-900 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 glow-on-hover">
+                            <p class="text-3xl font-bold text-pink-600 dark:text-pink-400">40%</p>
+                            <p class="text-gray-600 dark:text-gray-400">SEO Improvement</p>
+                        </div>
+                        <div class="stagger-item p-4 bg-white dark:bg-slate-900 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 glow-on-hover">
+                            <p class="text-3xl font-bold text-green-600 dark:text-green-400">99.9%</p>
+                            <p class="text-gray-600 dark:text-gray-400">Uptime</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-4">
+        <div class="container mx-auto">
+            <div class="text-center mb-12 reveal">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Technical <span class="gradient-text">Skills</span></h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Frontend Skills -->
+                <div class="reveal p-6 bg-white dark:bg-slate-800 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 card-3d rotating-border">
+                    <div class="flex items-center justify-center w-16 h-16 bg-indigo-100 dark:bg-indigo-900 rounded-full mb-4 mx-auto animate-bounce-slow">
+                        <svg class="w-8 h-8 text-indigo-600 dark:text-indigo-400" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-center text-indigo-600 dark:text-indigo-400">Frontend</h3>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium">HTML5 & CSS3</span>
+                                <span class="text-sm font-medium text-indigo-600 dark:text-indigo-400">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden">
+                                <div class="progress-bar bg-gradient-to-r from-indigo-600 to-purple-600 h-2.5 rounded-full relative" style="width: 0%" data-progress="95">
+                                    <span class="absolute inset-0 bg-white/30 animate-pulse"></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium">JavaScript (ES6+)</span>
+                                <span class="text-sm font-medium text-indigo-600 dark:text-indigo-400">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden">
+                                <div class="progress-bar bg-gradient-to-r from-indigo-600 to-purple-600 h-2.5 rounded-full relative" style="width: 0%" data-progress="90">
+                                    <span class="absolute inset-0 bg-white/30 animate-pulse"></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium">Bootstrap & Tailwind</span>
+                                <span class="text-sm font-medium text-indigo-600 dark:text-indigo-400">92%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden">
+                                <div class="progress-bar bg-gradient-to-r from-indigo-600 to-purple-600 h-2.5 rounded-full relative" style="width: 0%" data-progress="92">
+                                    <span class="absolute inset-0 bg-white/30 animate-pulse"></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium">React.js</span>
+                                <span class="text-sm font-medium text-indigo-600 dark:text-indigo-400">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden">
+                                <div class="progress-bar bg-gradient-to-r from-indigo-600 to-purple-600 h-2.5 rounded-full relative" style="width: 0%" data-progress="85">
+                                    <span class="absolute inset-0 bg-white/30 animate-pulse"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Backend Skills -->
+                <div class="reveal p-6 bg-white dark:bg-slate-800 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 card-3d rotating-border">
+                    <div class="flex items-center justify-center w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-full mb-4 mx-auto animate-bounce-slow" style="animation-delay: 0.2s;">
+                        <svg class="w-8 h-8 text-purple-600 dark:text-purple-400" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-center text-purple-600 dark:text-purple-400">Backend</h3>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium">PHP</span>
+                                <span class="text-sm font-medium text-purple-600 dark:text-purple-400">88%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden">
+                                <div class="progress-bar bg-gradient-to-r from-purple-600 to-pink-600 h-2.5 rounded-full relative" style="width: 0%" data-progress="88">
+                                    <span class="absolute inset-0 bg-white/30 animate-pulse"></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium">MySQL</span>
+                                <span class="text-sm font-medium text-purple-600 dark:text-purple-400">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden">
+                                <div class="progress-bar bg-gradient-to-r from-purple-600 to-pink-600 h-2.5 rounded-full relative" style="width: 0%" data-progress="85">
+                                    <span class="absolute inset-0 bg-white/30 animate-pulse"></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium">Python & Django</span>
+                                <span class="text-sm font-medium text-purple-600 dark:text-purple-400">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden">
+                                <div class="progress-bar bg-gradient-to-r from-purple-600 to-pink-600 h-2.5 rounded-full relative" style="width: 0%" data-progress="80">
+                                    <span class="absolute inset-0 bg-white/30 animate-pulse"></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium">REST API</span>
+                                <span class="text-sm font-medium text-purple-600 dark:text-purple-400">82%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden">
+                                <div class="progress-bar bg-gradient-to-r from-purple-600 to-pink-600 h-2.5 rounded-full relative" style="width: 0%" data-progress="82">
+                                    <span class="absolute inset-0 bg-white/30 animate-pulse"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CMS & Tools -->
+                <div class="reveal p-6 bg-white dark:bg-slate-800 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 card-3d rotating-border">
+                    <div class="flex items-center justify-center w-16 h-16 bg-pink-100 dark:bg-pink-900 rounded-full mb-4 mx-auto animate-bounce-slow" style="animation-delay: 0.4s;">
+                        <svg class="w-8 h-8 text-pink-600 dark:text-pink-400" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-center text-pink-600 dark:text-pink-400">CMS & Tools</h3>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium">WordPress</span>
+                                <span class="text-sm font-medium text-pink-600 dark:text-pink-400">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden">
+                                <div class="progress-bar bg-gradient-to-r from-pink-600 to-red-600 h-2.5 rounded-full relative" style="width: 0%" data-progress="95">
+                                    <span class="absolute inset-0 bg-white/30 animate-pulse"></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium">SEO Optimization</span>
+                                <span class="text-sm font-medium text-pink-600 dark:text-pink-400">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden">
+                                <div class="progress-bar bg-gradient-to-r from-pink-600 to-red-600 h-2.5 rounded-full relative" style="width: 0%" data-progress="90">
+                                    <span class="absolute inset-0 bg-white/30 animate-pulse"></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium">UI/UX Design</span>
+                                <span class="text-sm font-medium text-pink-600 dark:text-pink-400">87%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden">
+                                <div class="progress-bar bg-gradient-to-r from-pink-600 to-red-600 h-2.5 rounded-full relative" style="width: 0%" data-progress="87">
+                                    <span class="absolute inset-0 bg-white/30 animate-pulse"></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium">Git & GitHub</span>
+                                <span class="text-sm font-medium text-pink-600 dark:text-pink-400">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden">
+                                <div class="progress-bar bg-gradient-to-r from-pink-600 to-red-600 h-2.5 rounded-full relative" style="width: 0%" data-progress="85">
+                                    <span class="absolute inset-0 bg-white/30 animate-pulse"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section id="experience" class="py-20 px-4 bg-gray-50 dark:bg-slate-800">
+        <div class="container mx-auto">
+            <div class="text-center mb-12 reveal">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Work <span class="gradient-text">Experience</span></h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 mx-auto"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <!-- Experience Item 1 -->
+                <div class="reveal relative pl-8 pb-12 border-l-2 border-indigo-600 dark:border-indigo-400">
+                    <div class="absolute -left-3 top-0 w-6 h-6 bg-indigo-600 dark:bg-indigo-400 rounded-full border-4 border-white dark:border-slate-800 animate-pulse"></div>
+                    <div class="bg-white dark:bg-slate-900 p-6 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1 glow-on-hover">
+                        <span class="text-sm font-semibold text-indigo-600 dark:text-indigo-400">Sep 2025 - Present</span>
+                        <h3 class="text-2xl font-bold mt-2 mb-1">Python Full Stack Intern</h3>
+                        <h4 class="text-lg text-gray-600 dark:text-gray-400 mb-4">Vetri Technology Solution</h4>
+                        <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                            <li>• Assisting in full-stack web applications using Python, Django, MySQL, and modern frontend frameworks</li>
+                            <li>• Contributing to mobile application development with focus on Android platforms</li>
+                            <li>• Supporting UI/UX design workflows using Figma, Balsamiq, and Canva</li>
+                            <li>• Collaborating with senior developers on REST API integration and backend optimization</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Experience Item 2 -->
+                <div class="reveal relative pl-8 pb-12 border-l-2 border-indigo-600 dark:border-indigo-400">
+                    <div class="absolute -left-3 top-0 w-6 h-6 bg-indigo-600 dark:bg-indigo-400 rounded-full border-4 border-white dark:border-slate-800 animate-pulse" style="animation-delay: 0.2s;"></div>
+                    <div class="bg-white dark:bg-slate-900 p-6 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1 glow-on-hover">
+                        <span class="text-sm font-semibold text-indigo-600 dark:text-indigo-400">Jan 2021 - Aug 2025</span>
+                        <h3 class="text-2xl font-bold mt-2 mb-1">Senior Web Developer</h3>
+                        <h4 class="text-lg text-gray-600 dark:text-gray-400 mb-4">Chennai Leads</h4>
+                        <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                            <li>• Developed and maintained 1000+ responsive websites and landing pages</li>
+                            <li>• Achieved 25% faster load times and improved mobile performance</li>
+                            <li>• Customized WordPress themes and plugins, reducing turnaround time by 20%</li>
+                            <li>• Executed SEO audits achieving 35% increase in organic traffic</li>
+                            <li>• Managed hosting, DNS configurations, ensuring 99.9% uptime</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Experience Item 3 -->
+                <div class="reveal relative pl-8 pb-12 border-l-2 border-indigo-600 dark:border-indigo-400">
+                    <div class="absolute -left-3 top-0 w-6 h-6 bg-indigo-600 dark:bg-indigo-400 rounded-full border-4 border-white dark:border-slate-800 animate-pulse" style="animation-delay: 0.4s;"></div>
+                    <div class="bg-white dark:bg-slate-900 p-6 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1 glow-on-hover">
+                        <span class="text-sm font-semibold text-indigo-600 dark:text-indigo-400">Aug 2018 - Dec 2020</span>
+                        <h3 class="text-2xl font-bold mt-2 mb-1">Senior Web Developer</h3>
+                        <h4 class="text-lg text-gray-600 dark:text-gray-400 mb-4">Agesem Developers</h4>
+                        <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                            <li>• Built 200+ custom websites and landing pages improving engagement by 30%</li>
+                            <li>• Integrated backend functionalities enhancing performance and scalability</li>
+                            <li>• Designed visual branding assets strengthening client brand identity</li>
+                            <li>• Managed domain registrations, DNS settings, and server troubleshooting</li>
+                            <li>• Implemented SEO strategies driving 25% boost in search rankings</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Experience Item 4 -->
+                <div class="reveal relative pl-8">
+                    <div class="absolute -left-3 top-0 w-6 h-6 bg-indigo-600 dark:bg-indigo-400 rounded-full border-4 border-white dark:border-slate-800 animate-pulse" style="animation-delay: 0.6s;"></div>
+                    <div class="bg-white dark:bg-slate-900 p-6 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1 glow-on-hover">
+                        <span class="text-sm font-semibold text-indigo-600 dark:text-indigo-400">Jun 2017 - Aug 2018</span>
+                        <h3 class="text-2xl font-bold mt-2 mb-1">Junior Web Developer</h3>
+                        <h4 class="text-lg text-gray-600 dark:text-gray-400 mb-4">Astonish Infotech</h4>
+                        <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                            <li>• Developed 10+ responsive websites improving cross-device user experience</li>
+                            <li>• Implemented robust PHP/MySQL database integrations</li>
+                            <li>• Streamlined data management reducing errors by 20%</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section with Real Links -->
+    <section id="projects" class="py-20 px-4">
+        <div class="container mx-auto">
+            <div class="text-center mb-12 reveal">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Featured <span class="gradient-text">Projects</span></h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 mx-auto"></div>
+                <p class="mt-4 text-gray-600 dark:text-gray-400">Selected from 1000+ successful projects</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="reveal group bg-white dark:bg-slate-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 card-3d">
+                    <div class="relative h-48 bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center overflow-hidden">
+                        <svg class="w-24 h-24 text-white opacity-50 group-hover:scale-125 transition-transform duration-500" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                        </svg>
+                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <a href="https://www.kbdentalclinic.in/" target="_blank" class="px-6 py-2 bg-white text-indigo-600 rounded-lg font-semibold transform scale-90 group-hover:scale-100 transition-transform duration-300">
+                                View Live →
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">KB Dental Clinic</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">Professional healthcare website with appointment booking system and service showcase</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-400 text-sm rounded-full">WordPress</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-400 text-sm rounded-full">PHP</span>
+                        </div>
+                        <a href="https://www.kbdentalclinic.in/" target="_blank" class="text-indigo-600 dark:text-indigo-400 hover:underline font-semibold">kbdentalclinic.in →</a>
+                    </div>
+                </div>
+                
+                <!-- Project Card 2 -->
+                <div class="reveal group bg-white dark:bg-slate-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 card-3d">
+                    <div class="relative h-48 bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center overflow-hidden">
+                        <svg class="w-24 h-24 text-white opacity-50 group-hover:scale-125 transition-transform duration-500" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+                        </svg>
+                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <a href="https://sdmmodularkitchen.com" target="_blank" class="px-6 py-2 bg-white text-purple-600 rounded-lg font-semibold transform scale-90 group-hover:scale-100 transition-transform duration-300">
+                                View Live →
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">SDM Modular Kitchen</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">E-commerce platform for modular kitchen solutions with gallery and quote system</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-400 text-sm rounded-full">WordPress</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-400 text-sm rounded-full">PHP</span>
+                        </div>
+                        <a href="https://sdmmodularkitchen.com" target="_blank" class="text-purple-600 dark:text-purple-400 hover:underline font-semibold">sdmmodularkitchen.com →</a>
+                    </div>
+                </div>
+                
+                <!-- Project Card 3 -->
+                <div class="reveal group bg-white dark:bg-slate-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 card-3d">
+                    <div class="relative h-48 bg-gradient-to-br from-pink-500 to-red-600 flex items-center justify-center overflow-hidden">
+                        <svg class="w-24 h-24 text-white opacity-50 group-hover:scale-125 transition-transform duration-500" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20 4H4c-1.11 0-1.99.9-1.99 2L2 18c0 1.1.89 2 2 2h16c1.11 0 2-.9 2-2V6c0-1.1-.89-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z"/>
+                        </svg>
+                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <a href="https://tozzorestaurants.com/" target="_blank" class="px-6 py-2 bg-white text-pink-600 rounded-lg font-semibold transform scale-90 group-hover:scale-100 transition-transform duration-300">
+                                View Live →
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Tozzo Restaurants</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">Restaurant website with online menu, reservation system, and delivery integration</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-400 text-sm rounded-full">WordPress</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-400 text-sm rounded-full">WooCommerce</span>
+                        </div>
+                        <a href="https://tozzorestaurants.com/" target="_blank" class="text-pink-600 dark:text-pink-400 hover:underline font-semibold">tozzorestaurants.com →</a>
+                    </div>
+                </div>
+                
+                <!-- Project Card 4 -->
+                <div class="reveal group bg-white dark:bg-slate-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 card-3d">
+                    <div class="relative h-48 bg-gradient-to-br from-indigo-600 to-blue-600 flex items-center justify-center overflow-hidden">
+                        <svg class="w-24 h-24 text-white opacity-50 group-hover:scale-125 transition-transform duration-500" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <a href="https://thayarmatrimony.com" target="_blank" class="px-6 py-2 bg-white text-indigo-600 rounded-lg font-semibold transform scale-90 group-hover:scale-100 transition-transform duration-300">
+                                View Live →
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Thayar Matrimony</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">Matrimonial platform with profile management, search filters, and secure messaging</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-400 text-sm rounded-full">PHP</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-400 text-sm rounded-full">MySQL</span>
+                        </div>
+                        <a href="https://thayarmatrimony.com" target="_blank" class="text-indigo-600 dark:text-indigo-400 hover:underline font-semibold">thayarmatrimony.com →</a>
+                    </div>
+                </div>
+                
+                <!-- Project Card 5 -->
+                <div class="reveal group bg-white dark:bg-slate-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 card-3d">
+                    <div class="relative h-48 bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center overflow-hidden">
+                        <svg class="w-24 h-24 text-white opacity-50 group-hover:scale-125 transition-transform duration-500" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+                        </svg>
+                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <a href="https://gauthamassociates.in/" target="_blank" class="px-6 py-2 bg-white text-green-600 rounded-lg font-semibold transform scale-90 group-hover:scale-100 transition-transform duration-300">
+                                View Live →
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Gautham Associates</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">Training, Consulting, Auditing in Occupational Safety and Health</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-400 text-sm rounded-full">WordPress</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-400 text-sm rounded-full">SEO</span>
+                        </div>
+                        <a href="https://gauthamassociates.in/" target="_blank" class="text-green-600 dark:text-green-400 hover:underline font-semibold">gauthamassociates.in →</a>
+                    </div>
+                </div>
+                
+                <!-- Project Card 6 -->
+                <div class="reveal group bg-white dark:bg-slate-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 card-3d">
+                    <div class="relative h-48 bg-gradient-to-br from-yellow-500 to-orange-600 flex items-center justify-center overflow-hidden">
+                        <svg class="w-24 h-24 text-white opacity-50 group-hover:scale-125 transition-transform duration-500" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
+                        </svg>
+                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <a href="https://birdboxdrones.com" target="_blank" class="px-6 py-2 bg-white text-orange-600 rounded-lg font-semibold transform scale-90 group-hover:scale-100 transition-transform duration-300">
+                                View Live →
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Birdbox Drones</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">Technology company website showcasing drone services, portfolio, and contact forms</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-400 text-sm rounded-full">React.js</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-400 text-sm rounded-full">Tailwind</span>
+                        </div>
+                        <a href="https://birdboxdrones.com" target="_blank" class="text-orange-600 dark:text-orange-400 hover:underline font-semibold">birdboxdrones.com →</a>
+                    </div>
+                </div>
+
+                <!-- Project Card 7 - NEW -->
+                <div class="reveal group bg-white dark:bg-slate-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 card-3d">
+                    <div class="relative h-48 bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center overflow-hidden">
+                        <svg class="w-24 h-24 text-white opacity-50 group-hover:scale-125 transition-transform duration-500" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/>
+                            <path d="M14 17H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                        </svg>
+                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <a href="https://cidtedu.com" target="_blank" class="px-6 py-2 bg-white text-blue-600 rounded-lg font-semibold transform scale-90 group-hover:scale-100 transition-transform duration-300">
+                                View Live →
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">CIDT</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">The College of Integrated Design and Technology (CIDT) is a forward-thinking powerhouse of creativity, located in the Chennai, Tamil Nadu, India.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-400 text-sm rounded-full">HTML&CSS</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-400 text-sm rounded-full">PHP</span>
+                        </div>
+                        <a href="https://cidtedu.com" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline font-semibold">cidtedu.com →</a>
+                    </div>
+                </div>
+
+                <!-- Project Card 8 - NEW -->
+                <div class="reveal group bg-white dark:bg-slate-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 card-3d">
+                    <div class="relative h-48 bg-gradient-to-br from-rose-500 to-pink-600 flex items-center justify-center overflow-hidden">
+                        <svg class="w-24 h-24 text-white opacity-50 group-hover:scale-125 transition-transform duration-500" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <a href="https://unicecouncil.org/" target="_blank" class="px-6 py-2 bg-white text-rose-600 rounded-lg font-semibold transform scale-90 group-hover:scale-100 transition-transform duration-300">
+                                View Live →
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Unice Council</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">E-commerce furniture store with product catalog, virtual showroom, and quote system</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-400 text-sm rounded-full">WordPress</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-400 text-sm rounded-full">Custom Template</span>
+                        </div>
+                        <a href="https://unicecouncil.org/" target="_blank" class="text-rose-600 dark:text-rose-400 hover:underline font-semibold">unicecouncil.org →</a>
+                    </div>
+                </div>
+
+                <!-- Project Card 9 - NEW -->
+                <div class="reveal group bg-white dark:bg-slate-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 card-3d">
+                    <div class="relative h-48 bg-gradient-to-br from-emerald-500 to-green-600 flex items-center justify-center overflow-hidden">
+                        <svg class="w-24 h-24 text-white opacity-50 group-hover:scale-125 transition-transform duration-500" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M17.09 4.56c-.7-1.03-1.5-1.99-2.4-2.85 0 0-1.97 5.09-7.5 7.5 0 0-1.45 6.14 2.55 10.55.8-2.52 2.04-5.09 3.75-7.51-1.38-4.38-1.34-6.85-1.34-6.85 1.86.3 3.66 1.04 5.28 2.18.51-1.18.76-2.45.66-3.02z"/>
+                        </svg>
+                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <a href="https://iffahguesthouse.com/" target="_blank" class="px-6 py-2 bg-white text-emerald-600 rounded-lg font-semibold transform scale-90 group-hover:scale-100 transition-transform duration-300">
+                                View Live →
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">IFFAH Guest House</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">IFFAH Guest House is a trusted men’s hostel offering safe and comfortable accommodation</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-400 text-sm rounded-full">HTML&CSS</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-400 text-sm rounded-full">PHP</span>
+                        </div>
+                        <a href="https://iffahguesthouse.com/" target="_blank" class="text-emerald-600 dark:text-emerald-400 hover:underline font-semibold">iffahguesthouse.com →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 px-4 bg-gray-50 dark:bg-slate-800">
+        <div class="container mx-auto">
+            <div class="text-center mb-12 reveal">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Services <span class="gradient-text">Offered</span></h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div class="reveal bg-white dark:bg-slate-900 p-8 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 text-center glow-on-hover rotating-border">
+                    <div class="flex items-center justify-center w-20 h-20 bg-indigo-100 dark:bg-indigo-900 rounded-full mb-6 mx-auto animate-float">
+                        <svg class="w-10 h-10 text-indigo-600 dark:text-indigo-400" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-indigo-600 dark:text-indigo-400">Web Development</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Custom responsive websites and web applications using modern frameworks and technologies</p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="reveal bg-white dark:bg-slate-900 p-8 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 text-center glow-on-hover rotating-border">
+                    <div class="flex items-center justify-center w-20 h-20 bg-purple-100 dark:bg-purple-900 rounded-full mb-6 mx-auto animate-float" style="animation-delay: 0.2s;">
+                        <svg class="w-10 h-10 text-purple-600 dark:text-purple-400" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20 18c1.1 0 1.99-.9 1.99-2L22 5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2H0c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2h-4zM4 5h16v11H4V5zm8 14c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-purple-600 dark:text-purple-400">WordPress Development</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Custom WordPress themes, plugin development, and CMS customization for business needs</p>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="reveal bg-white dark:bg-slate-900 p-8 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 text-center glow-on-hover rotating-border">
+                    <div class="flex items-center justify-center w-20 h-20 bg-pink-100 dark:bg-pink-900 rounded-full mb-6 mx-auto animate-float" style="animation-delay: 0.4s;">
+                        <svg class="w-10 h-10 text-pink-600 dark:text-pink-400" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-pink-600 dark:text-pink-400">UI/UX Design</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Professional interface design using Figma, Photoshop, and modern design tools</p>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="reveal bg-white dark:bg-slate-900 p-8 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 text-center glow-on-hover rotating-border">
+                    <div class="flex items-center justify-center w-20 h-20 bg-green-100 dark:bg-green-900 rounded-full mb-6 mx-auto animate-float" style="animation-delay: 0.6s;">
+                        <svg class="w-10 h-10 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-green-600 dark:text-green-400">Website Maintenance</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Ongoing support, updates, hosting management, and SEO optimization services</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 px-4">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-12 reveal">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Education & <span class="gradient-text">Certifications</span></h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Education Card -->
+                <div class="reveal bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 card-3d glow-on-hover">
+                    <div class="flex items-center justify-center w-16 h-16 bg-indigo-100 dark:bg-indigo-900 rounded-full mb-6 animate-bounce-slow">
+                        <svg class="w-8 h-8 text-indigo-600 dark:text-indigo-400" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 text-indigo-600 dark:text-indigo-400">M.Sc Software Engineering</h3>
+                    <p class="text-lg text-gray-700 dark:text-gray-300 mb-2">Anna University</p>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Five Years Integrated Course</p>
+                    <p class="text-sm font-semibold text-indigo-600 dark:text-indigo-400">Jun 2008 - Jul 2013</p>
+                </div>
+                
+                <!-- Certifications Card -->
+                <div class="reveal bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 card-3d glow-on-hover">
+                    <div class="flex items-center justify-center w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-full mb-6 animate-bounce-slow" style="animation-delay: 0.2s;">
+                        <svg class="w-8 h-8 text-purple-600 dark:text-purple-400" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M9 11.75A1.25 1.25 0 107.75 13 1.25 1.25 0 009 11.75zM15 11.75A1.25 1.25 0 1013.75 13 1.25 1.25 0 0015 11.75z"/>
+                            <path d="M21.25 12A9.25 9.25 0 1112 2.75 9.25 9.25 0 0121.25 12zm-2 0A7.25 7.25 0 1012 19.25 7.25 7.25 0 0019.25 12z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-purple-600 dark:text-purple-400">Certifications</h3>
+                    <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-purple-600 dark:text-purple-400 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Web Component Development using Java Technologies</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-purple-600 dark:text-purple-400 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Developing Mobile Applications for the Android Platform</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Languages -->
+            <div class="reveal mt-8 bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all duration-500">
+                <h3 class="text-2xl font-bold mb-6">Languages</h3>
+                <div class="flex justify-center gap-8">
+                    <div class="p-4 transform hover:scale-110 transition-transform duration-300">
+                        <div class="w-20 h-20 bg-indigo-100 dark:bg-indigo-900 rounded-full flex items-center justify-center mb-3 mx-auto animate-bounce-slow">
+                            <span class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">EN</span>
+                        </div>
+                        <p class="font-semibold">English</p>
+                    </div>
+                    <div class="p-4 transform hover:scale-110 transition-transform duration-300">
+                        <div class="w-20 h-20 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mb-3 mx-auto animate-bounce-slow" style="animation-delay: 0.2s;">
+                            <span class="text-2xl font-bold text-purple-600 dark:text-purple-400">TA</span>
+                        </div>
+                        <p class="font-semibold">Tamil</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 bg-gray-50 dark:bg-slate-800">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-12 reveal">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Get In <span class="gradient-text">Touch</span></h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 mx-auto"></div>
+                <p class="mt-4 text-gray-600 dark:text-gray-400">Let's discuss your next project</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Contact Info -->
+                <div class="reveal space-y-6">
+                    <div class="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-x-2 glow-on-hover">
+                        <div class="flex items-center">
+                            <div class="flex items-center justify-center w-14 h-14 bg-indigo-100 dark:bg-indigo-900 rounded-full mr-4 animate-pulse-slow">
+                                <svg class="w-7 h-7 text-indigo-600 dark:text-indigo-400" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold mb-1">Email</h3>
+                                <a href="mailto:shinymusmana@gmail.com" class="text-indigo-600 dark:text-indigo-400 hover:underline">shinymusmana@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-x-2 glow-on-hover">
+                        <div class="flex items-center">
+                            <div class="flex items-center justify-center w-14 h-14 bg-purple-100 dark:bg-purple-900 rounded-full mr-4 animate-pulse-slow" style="animation-delay: 0.2s;">
+                                <svg class="w-7 h-7 text-purple-600 dark:text-purple-400" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold mb-1">Phone</h3>
+                                <a href="tel:+918940500788" class="text-purple-600 dark:text-purple-400 hover:underline">+91 89405 00788</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-x-2 glow-on-hover">
+                        <div class="flex items-center">
+                            <div class="flex items-center justify-center w-14 h-14 bg-pink-100 dark:bg-pink-900 rounded-full mr-4 animate-pulse-slow" style="animation-delay: 0.4s;">
+                                <svg class="w-7 h-7 text-pink-600 dark:text-pink-400" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold mb-1">Location</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Trichy, Tamil Nadu, India</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="reveal">
+                    <form class="bg-white dark:bg-slate-900 p-8 rounded-xl shadow-lg space-y-6 hover:shadow-2xl transition-all duration-500">
+                        <div>
+                            <label class="block text-sm font-semibold mb-2" for="name">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 bg-gray-50 dark:bg-slate-800 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600 dark:focus:ring-indigo-400 transition-all duration-300 transform focus:scale-105" placeholder="Your Name">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold mb-2" for="email">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 bg-gray-50 dark:bg-slate-800 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600 dark:focus:ring-indigo-400 transition-all duration-300 transform focus:scale-105" placeholder="your@email.com">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold mb-2" for="message">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 bg-gray-50 dark:bg-slate-800 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600 dark:focus:ring-indigo-400 transition-all duration-300 transform focus:scale-105" placeholder="Your message..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold rounded-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 ripple glow-on-hover">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-slate-900 py-8 px-4 border-t border-gray-200 dark:border-gray-800">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-600 dark:text-gray-400 mb-4 md:mb-0">
+                    © 2025 Shiny Musmana J. All rights reserved.
+                </p>
+                
+                <div class="flex gap-4">
+                    <a href="mailto:shinymusmana@gmail.com" class="p-3 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-indigo-600 hover:text-white dark:hover:bg-indigo-400 transition-all duration-300 transform hover:scale-110 hover:rotate-12">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/musmana" target="_blank" class="p-3 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-indigo-600 hover:text-white dark:hover:bg-indigo-400 transition-all duration-300 transform hover:scale-110 hover:rotate-12">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/in/shinymusmana" target="_blank" class="p-3 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-indigo-600 hover:text-white dark:hover:bg-indigo-400 transition-all duration-300 transform hover:scale-110 hover:rotate-12">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Dark Mode Toggle
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+        
+        // Show correct icon on page load
+        if (localStorage.getItem('color-theme') === 'light' || (!localStorage.getItem('color-theme') && !window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            themeToggleDarkIcon.classList.remove('hidden');
+        } else {
+            themeToggleLightIcon.classList.remove('hidden');
+        }
+        
+        themeToggleBtn.addEventListener('click', function() {
+            // Toggle icons
+            themeToggleDarkIcon.classList.toggle('hidden');
+            themeToggleLightIcon.classList.toggle('hidden');
+            
+            // Toggle dark mode
+            if (localStorage.getItem('color-theme')) {
+                if (localStorage.getItem('color-theme') === 'light') {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                }
+            } else {
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                }
+            }
+        });
+        
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Scroll Reveal Animation
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            const revealPoint = 100;
+            
+            revealElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                
+                if (elementTop < windowHeight - revealPoint) {
+                    element.classList.add('active');
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Initial check
+        
+        // Animate Progress Bars
+        const animateProgressBars = () => {
+            const progressBars = document.querySelectorAll('.progress-bar');
+            
+            progressBars.forEach(bar => {
+                const progress = bar.getAttribute('data-progress');
+                const barTop = bar.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (barTop < windowHeight - 100 && bar.style.width === '0%') {
+                    setTimeout(() => {
+                        bar.style.width = progress + '%';
+                    }, 200);
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateProgressBars);
+        animateProgressBars(); // Initial check
+        
+        // Parallax Effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.parallax-layer');
+            
+            parallaxElements.forEach(element => {
+                const speed = 0.5;
+                element.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+        
+        // Magnetic Button Effect
+        document.querySelectorAll('.magnetic-btn').forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                
+                btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+            });
+            
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'translate(0, 0)';
+            });
+        });
+        
+        // Intersection Observer for stagger animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.stagger-item').forEach(item => {
+            observer.observe(item);
+        });
+        
+        // Add animation class to hero section on load
+        window.addEventListener('load', () => {
+            document.querySelector('#home').classList.add('active');
+        });
+        
+        // Cursor Trail Effect (Optional)
+        let mouseX = 0, mouseY = 0;
+        let trailX = 0, trailY = 0;
+        
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+        
+        // Form Enhancement
+        const form = document.querySelector('form');
+        if (form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const button = form.querySelector('button[type="submit"]');
+                button.innerHTML = '<span class="animate-pulse">Sending...</span>';
+                
+                // Simulate form submission
+                setTimeout(() => {
+                    button.innerHTML = '✓ Message Sent!';
+                    button.classList.add('bg-green-600');
+                    form.reset();
+                    
+                    setTimeout(() => {
+                        button.innerHTML = 'Send Message';
+                        button.classList.remove('bg-green-600');
+                    }, 3000);
+                }, 2000);
+            });
+        }
+    </script>
+
+</body>
+</html>
